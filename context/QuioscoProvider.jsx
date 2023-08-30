@@ -75,7 +75,25 @@ const QuioscoProvider = ({ children }) => {
   };
   const colocarOrden = async (e) => {
     e.preventDefault();
-    alert("Enviando...");
+    try {
+      await axios.post("/api/ordenes", {
+        pedido,
+        nombre,
+        total,
+        fecha: Date.now().toString(),
+      });
+      //*Resetear App
+      setCategotiaActual(categorias[0]);
+      setPedido([]);
+      setNombre("");
+      setTotal(0);
+      toast.success("Pedido Realizado Correctamente");
+      setTimeout(() => {
+        router.push("/");
+      }, 3000);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

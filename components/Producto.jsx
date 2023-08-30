@@ -8,7 +8,6 @@ const Producto = ({ producto }) => {
   const [edicion, setEdicion] = useState(false);
 
   const pedidoActual = pedido.find((p) => p.id === producto.id);
-  console.log(pedidoActual);
 
   useEffect(() => {
     const pedidoActual = pedido?.find((p) => p.id === producto.id) || {};
@@ -26,9 +25,9 @@ const Producto = ({ producto }) => {
           {pedidoActual?.cantidad}
         </p> */}
         {pedidoActual && (
-          <span class="relative flex h-3 w-3">
-            <span class="animate-ping absolute inline-flex h-8 w-6 rounded-full bg-red-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full p-2 h-9 w-12 bg-red-500 text-white">
+          <span className="relative flex h-3 w-3">
+            <span className="animate-ping absolute inline-flex h-8 w-6 rounded-full bg-red-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full p-2 h-9 w-12 bg-red-500 text-white">
               {pedidoActual?.cantidad}
             </span>
           </span>
