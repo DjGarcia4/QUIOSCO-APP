@@ -42,7 +42,7 @@ const Pasos = () => {
           </button>
         ))}
       </div>
-      <div className="bg-gray-100 mb-10 ">
+      <div className="bg-gray-100 mb-10 rounded-full">
         <div
           id="progress-bar"
           className="rounded-full bg-amber-500 text-xs leading-none h-2 text-center text-white ease-in duration-300 delay-150"

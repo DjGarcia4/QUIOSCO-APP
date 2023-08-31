@@ -5,10 +5,15 @@ const Categoria = ({ categoria }) => {
   const { handleClickCategoria, categoriaActual, setMenuOpen } = useQuiosco();
   const { nombre, icono, id } = categoria;
   return (
-    <div
+    <button
       className={`${
         categoriaActual?.id === id ? "bg-amber-400 " : ""
-      }flex items-center gap-2 w-full border p-2 hover:bg-amber-400 my-3 rounded-md`}
+      }flex items-center gap-2 w-full border p-2 hover:bg-amber-400 my-3 rounded-md text-2xl font-bold hover:cursor-pointer`}
+      onClick={() => {
+        handleClickCategoria(id);
+        setMenuOpen(false);
+      }}
+      type="button"
     >
       <Image
         width={60}
@@ -17,17 +22,8 @@ const Categoria = ({ categoria }) => {
         alt={`Image icono ${nombre}`}
         className="mr-5"
       />
-      <button
-        type="button"
-        className="text-2xl font-bold hover:cursor-pointer "
-        onClick={() => {
-          handleClickCategoria(id);
-          setMenuOpen(false);
-        }}
-      >
-        {nombre}
-      </button>
-    </div>
+      {nombre}
+    </button>
   );
 };
 
