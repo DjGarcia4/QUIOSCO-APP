@@ -13,7 +13,7 @@ export default function Home() {
       <p className="md:text-2xl my-10">
         Elige y personaliza tu pedido a continuacion:
       </p>
-      <div className="grid gap-2 grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+      <div className="grid gap-2 grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 last-of-type:mb-20 md:last-of-type:mb-0">
         {categoriaActual?.productos?.map((producto) => (
           <Producto key={producto.id} producto={producto} />
         ))}
