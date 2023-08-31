@@ -25,7 +25,7 @@ const Pasos = () => {
       <div className="flex justify-between mb-5">
         {pasos.map((paso) => (
           <button
-            className="text-2xl font-bold "
+            className="text-base md:text-2xl font-bold "
             key={paso.paso}
             onClick={() => {
               router.push(paso.url);

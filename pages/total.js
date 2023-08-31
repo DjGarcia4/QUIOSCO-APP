@@ -14,8 +14,12 @@ export default function Resumen() {
   }, [pedido, comprobarPedido]);
   return (
     <Layout pagina={`Total y Confirmar Pedido`}>
-      <h1 className="text-4xl font-black">Total y Confirmar Pedido</h1>
-      <p className="text-2xl my-10">Confirma tu Pedido a Continuación</p>
+      <h1 className="text-2xl md:text-4xl font-black">
+        Total y Confirmar Pedido
+      </h1>
+      <p className="md:text-2xl my-5 md:my-10">
+        Confirma tu Pedido a Continuación
+      </p>
       <form onSubmit={colocarOrden}>
         <div>
           <label
@@ -34,7 +38,8 @@ export default function Resumen() {
         </div>
         <div className="mt-10">
           <p className="text-2xl">
-            Total a Pagar: <span className="font-bold">${total}</span>
+            Total a Pagar:{" "}
+            <span className="font-bold">${total.toFixed(2)}</span>
           </p>
         </div>
         <div>

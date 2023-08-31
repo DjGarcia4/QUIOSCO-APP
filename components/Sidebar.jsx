@@ -6,17 +6,19 @@ const Sidebar = () => {
   const { categorias } = useQuiosco();
   return (
     <>
-      <Image
-        width={200}
-        height={50}
-        src={"/assets/img/logo.svg"}
-        alt="Imagen Logotipo"
-      />
-      <nav className="mt-10">
-        {categorias.map((categoria) => (
-          <Categoria key={categoria.id} categoria={categoria} />
-        ))}
-      </nav>
+      <div className="grid place-items-center mt-10">
+        <Image
+          width={200}
+          height={50}
+          src={"/assets/img/logo.svg"}
+          alt="Imagen Logotipo"
+        />
+        <nav className="mt-4">
+          {categorias.map((categoria) => (
+            <Categoria key={categoria.id} categoria={categoria} />
+          ))}
+        </nav>
+      </div>
     </>
   );
 };

@@ -13,6 +13,7 @@ const QuioscoProvider = ({ children }) => {
   const [pedido, setPedido] = useState([]);
   const [nombre, setNombre] = useState("");
   const [total, setTotal] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const router = useRouter();
 
@@ -113,6 +114,8 @@ const QuioscoProvider = ({ children }) => {
         setNombre,
         colocarOrden,
         total,
+        menuOpen,
+        setMenuOpen,
       }}
     >
       {children}

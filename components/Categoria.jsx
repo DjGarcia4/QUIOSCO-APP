@@ -2,7 +2,7 @@ import Image from "next/image";
 import useQuiosco from "../hooks/useQuiosco";
 
 const Categoria = ({ categoria }) => {
-  const { handleClickCategoria, categoriaActual } = useQuiosco();
+  const { handleClickCategoria, categoriaActual, setMenuOpen } = useQuiosco();
   const { nombre, icono, id } = categoria;
   return (
     <div
@@ -22,6 +22,7 @@ const Categoria = ({ categoria }) => {
         className="text-2xl font-bold hover:cursor-pointer "
         onClick={() => {
           handleClickCategoria(id);
+          setMenuOpen(false);
         }}
       >
         {nombre}

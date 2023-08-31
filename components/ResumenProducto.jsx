@@ -5,18 +5,18 @@ const ResumenProducto = ({ producto }) => {
   const { handleChangeModal, handleSetProducto, handleEliminarProducto } =
     useQuiosco();
   return (
-    <div className=" shadow p-5 mb-3 flex gap-10 items-center rounded-md">
+    <div className=" shadow p-5 mb-3 md:flex gap-10 items-center rounded-md">
       <div className=" md:w-1/6">
         <Image
           width={300}
           height={400}
           alt={`Imagen producto ${producto.nombre}`}
           src={`/assets/img/${producto.imagen}.jpg`}
-          className="rounded-md"
+          className="rounded-md "
         />
       </div>
       <div className="md:w-4/6">
-        <p className="text-3xl font-bold">{producto.nombre}</p>
+        <p className=" text-xl md:text-3xl font-bold">{producto.nombre}</p>
         <p className="text-xl font-bold mt-2">Cantidad: {producto.cantidad}</p>
         <p className="text-xl font-bold mt-2 text-amber-500">
           Precio: ${producto.precio}
