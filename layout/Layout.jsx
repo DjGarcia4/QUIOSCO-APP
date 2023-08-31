@@ -38,7 +38,7 @@ export default function Layout({ children, pagina }) {
         <aside
           className={`${
             menuOpen ? "block" : "hidden"
-          } fixed md:sticky bg-white md:w-4/12 xl:w-1/4 2xl:w-1/5 p-5 shadow z-10 top-0 h-full md:block`}
+          } fixed md:sticky bg-white md:w-5/12 xl:w-1/4 2xl:w-2/8 p-5 shadow z-10 top-0 h-full md:block`}
         >
           <Sidebar />
         </aside>

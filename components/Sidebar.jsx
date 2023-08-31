@@ -6,7 +6,7 @@ const Sidebar = () => {
   const { categorias } = useQuiosco();
   return (
     <>
-      <div className="grid place-items-center mt-10">
+      <div className="grid place-items-center w-full mt-10">
         <Image
           width={200}
           height={50}
