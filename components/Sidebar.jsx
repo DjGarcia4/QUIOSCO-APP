@@ -12,6 +12,7 @@ const Sidebar = () => {
           height={50}
           src={"/assets/img/logo.svg"}
           alt="Imagen Logotipo"
+          className="hidden md:flex"
         />
         <nav className="mt-4">
           {categorias.map((categoria) => (

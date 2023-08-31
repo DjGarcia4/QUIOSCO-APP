@@ -7,6 +7,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Pasos from "../components/Pasos";
 import { useState } from "react";
+import Image from "next/image";
 
 const customStyles = {
   content: {
@@ -48,32 +49,41 @@ export default function Layout({ children, pagina }) {
           } h-screen md:overflow-y-scroll `}
         >
           <button
-            className="md:hidden fixed top-0  z-20 p-2 bg-amber-500 w-full"
+            className="md:hidden fixed top-0  z-20 p-2 bg-white w-full flex justify-between items-center shadow"
             onClick={toggleMenu}
           >
+            <Image
+              width={70}
+              height={50}
+              src={"/assets/img/logo.svg"}
+              alt="Imagen Logotipo"
+              className=" rounded-md p-2"
+            />
             {menuOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6 text-white"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
+              <>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-6 h-6 text-amber-500"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </>
             ) : (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth={1.5}
+                strokeWidth={2}
                 stroke="currentColor"
-                className="w-6 h-6 text-white"
+                className="w-6 h-6 text-amber-500"
               >
                 <path
                   strokeLinecap="round"
@@ -84,7 +94,9 @@ export default function Layout({ children, pagina }) {
             )}
           </button>
           <div className="p-10 mt-10">
-            <Pasos />
+            <div className="fixed bg-white bottom-0 left-0 px-5 py-2  z-10 shadow md:shadow-none w-full  md:top-0 md:h-min md:sticky">
+              <Pasos />
+            </div>
             {children}
           </div>
         </main>

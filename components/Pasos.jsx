@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import useQuiosco from "../hooks/useQuiosco";
 
 const pasos = [
   { paso: 1, nombre: "Menú", url: "/" },
@@ -7,6 +8,7 @@ const pasos = [
 ];
 
 const Pasos = () => {
+  const { pedido } = useQuiosco();
   const router = useRouter();
   const calcularProgreso = () => {
     let valor;
@@ -25,13 +27,18 @@ const Pasos = () => {
       <div className="flex justify-between mb-5">
         {pasos.map((paso) => (
           <button
-            className="text-base md:text-2xl font-bold "
+            className="text-base md:text-2xl font-bold flex"
             key={paso.paso}
             onClick={() => {
               router.push(paso.url);
             }}
           >
             {paso.nombre}
+            <span
+              className={`${pedido.length && paso.url !== "/" ? "flex" : ""}`}
+            >
+              <span className="animate-ping h-2 w-2 rounded-full bg-red-400 opacity-75"></span>
+            </span>
           </button>
         ))}
       </div>
